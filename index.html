@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4285f4" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4285f4" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#4285f4" />
     <title>VisualNovelEngine</title>
     <link
       rel="icon"
@@ -18,28 +24,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button class="NewGameBtn BtnMenu">Новая игра</button>
+    <button class="LoadGameBtn BtnMenu">Последнее сохранение</button>
     <div class="description">
       <h1>Описание:</h1>
       <br />
       <hr />
       <h3>Бета тест движка для написания визуальных новелл</h3>
+      <h3>Не расчитан на мобильные устройства!</h3>
       <h3>Если с ПК, играйте с F11</h3>
-      <br /><br /><br />
-      <h3>Нужно доделать:</h3>
-      <h4>Меню</h4>
-      <h4>Сохранение</h4>
-      <h4>Анимацию для смены фона</h4>
+      <br />
+      <h3>Сменить скорость появления текста:</h3>
+      <input
+        class="slaiderInput"
+        type="range"
+        id="slider"
+        min="1"
+        max="30"
+        value="15"
+      />
+      <p id="display"></p>
     </div>
     <div class="divButton"></div>
     <div class="divBackground"></div>
     <footer class="footer">
-      <p class="name">Версия 1.0</p>
+      <p class="name">Версия 1.1</p>
       <p class="phrase" id="typewriter">
         Кликните где-нибудь на экране для старта!
       </p>
       <div class="panel">
-        <i class="fa fa-eye" aria-hidden="true"></i>
-        <i class="fa fa-folder" aria-hidden="true"></i>
+        <i class="fa fa-eye hidden" aria-hidden="true"></i>
+        <i class="fa fa-folder hidden" aria-hidden="true"></i>
       </div>
     </footer>
     <script src="mediaContent.js"></script>

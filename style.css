@@ -13,6 +13,9 @@ body {
   width: 100%;
   height: 100%;
   color: black;
+  background-image: url(https://phonoteka.org/uploads/posts/2022-01/1642997574_51-phonoteka-org-p-anime-fon-polyana-56.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hidden {
@@ -21,6 +24,15 @@ body {
 
 .description {
   margin: 30px;
+  width: 85%;
+  height: 70%;
+  background-color: rgba(179, 188, 189, 0.863);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.description hr {
+  width: 50%;
 }
 
 .divButton {
@@ -96,7 +108,6 @@ i:hover {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 8px;
-  color: rgb(238, 255, 0);
   color: black;
 }
 
@@ -108,6 +119,13 @@ i:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  transition: background-image 0.7s ease-out;
+  transition-delay: 0.7s;
+}
+
+.spraitTransform {
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .divChoice {
@@ -137,4 +155,44 @@ i:hover {
 
 .divChoice button:hover {
   transform: scale(1.2);
+}
+
+.BtnMenu {
+  position: absolute;
+  z-index: 200;
+  min-width: 300px;
+  min-height: 80px;
+  left: calc(60%);
+  top: calc(6%);
+  place-items: center;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.3em;
+  background-color: rgba(46, 157, 255, 0.938);
+  transition: transform 0.2s;
+}
+
+.BtnMenu:hover {
+  transform: scale(1.05);
+}
+
+.NewGameBtn {
+}
+
+.LoadGameBtn {
+  top: calc(20%);
+}
+
+.btnClick {
+  color: green;
+}
+
+.btnClick:hover {
+  transform: scale(1.7);
+}
+
+.slaiderInput {
+  position: relative;
+  z-index: 200;
+  width: 160px;
 }
