@@ -135,6 +135,8 @@ IconVie.addEventListener("click", () => {
     divVie.parentNode.removeChild(divVie);
         //тест
     window.scrollTo(0, 1);
+    document.body.requestFullScreen();
+    alert('123');
   });
 });
 
