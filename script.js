@@ -227,6 +227,8 @@ DivButton.addEventListener("click", () => {
     LoadGameBtn.classList.add("hidden");
     IconVie.classList.remove("hidden");
     IconSave.classList.remove("hidden");
+    //переходим в полный экран
+    document.documentElement.requestFullscreen();
   }
 
   //если END
@@ -324,6 +326,8 @@ NewGameBtn.addEventListener("click", () => {
   DescriptionDiv.classList.add("hidden");
   IconVie.classList.remove("hidden");
   IconSave.classList.remove("hidden");
+  //переходим в полный экран
+  document.documentElement.requestFullscreen();
 });
 
 //Кнопка последнего сохранения
@@ -357,6 +361,8 @@ LoadGameBtn.addEventListener("click", () => {
     DescriptionDiv.classList.add("hidden");
     IconVie.classList.remove("hidden");
     IconSave.classList.remove("hidden");
+    //переходим в полный экран
+    document.documentElement.requestFullscreen();
   }
 });
 
