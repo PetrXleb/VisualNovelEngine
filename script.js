@@ -74,7 +74,7 @@ function FNputSprait(SpraitArr) {
   divContainer.classList.add("spraitTransform");
   divContainer.classList.add(classDelete);
   // Добавление созданного элемента в <body>
-  document.body.appendChild(divContainer);
+  DivBackground.appendChild(divContainer);
   //Спрайт в spriteArrTolocalStorage
   spriteArrTolocalStorage.push(SpraitArr);
 }
@@ -401,31 +401,15 @@ if (localStorage.getItem("VNSpeedText") == null) {
 //
 //
 //
-//mainArr = [...ROOTDemoFinal];
-
 /* let mainArr = [
-  "1111111111111",
   "FNchangeBackgroundImage",
-  sceneFon,
+  fon,
+  "Очень длинная строка для теста. Очень длинная строка для теста. Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка КОНЕЦ!",
+  "Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка ",
+  "Обычная строка",
   "...",
-  "К моему удивлению, я обнаружил Лену, тренирующую тенисные подачи",
-  "FNchangeName",
-  nameLena,
-  "FNputSprait",
-  [lenaSport, 15, 30, 50], ///size //top //left
-  "Ой, привет. А ты наверное Алису ищешь?",
-  "FNchangeName",
-  you,
-  "Да нет, просто решил прогуляться",
-  "FNchangeName",
-  thoughts,
-  "~Я не стал уточнять у неё, почему она выбрала сцену, в качестве места для занятия тенисом~",
-  "FNchangeName",
-  autor,
-  "И так далее...",
-  ROOTDemoFinal,
-]; */
-
+];
+ */
 //
 //
 //
@@ -434,3 +418,64 @@ if (localStorage.getItem("VNSpeedText") == null) {
 //
 //Тестовый рут
 let mainArr = [...rootDemoStart];
+
+//панель монолога функция
+function FNmonologPanel(MonologArr) {
+  //скрываем футер, ставим панель
+  Footer.classList.toggle("hidden");
+  let MonologPanel = document.createElement("div");
+  MonologPanel.classList.add("monologPanel");
+  document.body.appendChild(MonologPanel);
+  let TextPanel = document.createElement("div");
+  TextPanel.classList.add("textPanel");
+  MonologPanel.appendChild(TextPanel);
+  //Добавляем слушатель для monologPanel
+  (function () {
+    let count = -1;
+    MonologPanel.addEventListener("click", function typewriter() {
+      count++;
+      //ЕСЛИ BREAK, то выходим из панели
+      if (MonologArr[count] == "BREAK") {
+        MonologPanel.parentNode.removeChild(MonologPanel);
+        Footer.classList.toggle("hidden");
+      }
+      //ЕСЛИ NEXT, то очищаем панель
+      if (MonologArr[count] == "NEXT") {
+        TextPanel.replaceChildren();
+        count++;
+      }
+      //
+      let str = MonologArr[count] + " ",
+        i = 0,
+        isTag,
+        text;
+      //Добавим wrapper, чтобы нельзя было кликнуть, пока строка бежит
+      let divWrapper = document.createElement("div");
+      divWrapper.classList.add("divWrapper");
+      document.body.appendChild(divWrapper);
+      let k = 2.5;
+      if (SPEEDTEXT < 5) k = 5;
+      setTimeout(() => {
+        divWrapper.parentNode.removeChild(divWrapper);
+      }, str.length * (SPEEDTEXT + k));
+      //
+      let TextP = document.createElement("p");
+      TextP.classList.add("textp");
+      TextPanel.appendChild(TextP);
+      (function type() {
+        text = str.slice(0, ++i);
+        if (text === str) return;
+
+        TextP.textContent = text;
+
+        var char = text.slice(-1);
+        if (char === "<") isTag = true;
+        if (char === ">") isTag = false;
+
+        if (isTag) return type();
+        setTimeout(type, SPEEDTEXT);
+      })();
+    });
+    MonologPanel.click();
+  })();
+}

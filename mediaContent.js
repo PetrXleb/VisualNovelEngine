@@ -39,7 +39,7 @@ let fon2 = "Media/Background/medpunkt.jpg";
 let sqfon = "Media/Background/sq.jpg";
 let sceneFon = "Media/Background/scene.jpg";
 let NikolaiHome = "Media/Background/NicolaiHome.jpg";
-
+let domicOlgi = "Media/Background/domicOlgi.jpg";
 //
 //СПРАЙТЫ
 //
