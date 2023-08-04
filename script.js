@@ -133,6 +133,8 @@ IconVie.addEventListener("click", () => {
   divVie.addEventListener("click", () => {
     Footer.classList.remove("hidden");
     divVie.parentNode.removeChild(divVie);
+        //тест
+    window.scrollTo(0, 1);
   });
 });
 
