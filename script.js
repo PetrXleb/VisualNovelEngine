@@ -11,6 +11,7 @@ const NewGameBtn = document.querySelector(".NewGameBtn");
 const LoadGameBtn = document.querySelector(".LoadGameBtn");
 
 let STARTFLAG = true;
+let FIRSTTOUCHFLAG = true;
 let INDEX = 0;
 let TEMP;
 let MUSIC;
@@ -213,6 +214,35 @@ function Choice(root) {
   }
 }
 
+//Функция захода в фуллскрин на телефонах
+document.body.addEventListener("touchstart", (e) => {
+  try {
+    //Проверяем, если самый первый клик, то заходим в фуллскрин
+    if (FIRSTTOUCHFLAG && e.touches.length == 1) {
+      FIRSTTOUCHFLAG = false;
+      setTimeout(() => {
+        document.documentElement.requestFullscreen();
+      }, 500);
+      return;
+    }
+    //Тройное нажатие фуллскрин
+    if (e.touches.length >= 3) {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        setTimeout(() => {
+          document.documentElement.requestFullscreen();
+        }, 500);
+      } else {
+        if (document.fullscreenEnabled) {
+          setTimeout(() => {
+            document.exitFullscreen();
+          }, 500);
+        }
+      }
+    }
+  } catch (error) {}
+});
+
 //
 //При клике итерируется массив
 //
@@ -227,8 +257,6 @@ DivButton.addEventListener("click", () => {
     LoadGameBtn.classList.add("hidden");
     IconVie.classList.remove("hidden");
     IconSave.classList.remove("hidden");
-    //переходим в полный экран
-    document.documentElement.requestFullscreen();
   }
 
   //если END
@@ -326,8 +354,6 @@ NewGameBtn.addEventListener("click", () => {
   DescriptionDiv.classList.add("hidden");
   IconVie.classList.remove("hidden");
   IconSave.classList.remove("hidden");
-  //переходим в полный экран
-  document.documentElement.requestFullscreen();
 });
 
 //Кнопка последнего сохранения
@@ -361,8 +387,6 @@ LoadGameBtn.addEventListener("click", () => {
     DescriptionDiv.classList.add("hidden");
     IconVie.classList.remove("hidden");
     IconSave.classList.remove("hidden");
-    //переходим в полный экран
-    document.documentElement.requestFullscreen();
   }
 });
 
@@ -402,28 +426,6 @@ if (localStorage.getItem("VNSpeedText") == null) {
   SPEEDTEXT = +localStorage.getItem("VNSpeedText");
   slider.value = SPEEDTEXT;
 }
-//
-//
-//
-//
-//
-/* let mainArr = [
-  "FNchangeBackgroundImage",
-  fon,
-  "Очень длинная строка для теста. Очень длинная строка для теста. Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка для теста.Очень длинная строка для теста. Очень длинная строка КОНЕЦ!",
-  "Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка Обычная строка ",
-  "Обычная строка",
-  "...",
-];
- */
-//
-//
-//
-//
-//
-//
-//Тестовый рут
-let mainArr = [...rootDemoStart];
 
 //панель монолога функция
 function FNmonologPanel(MonologArr) {
@@ -486,15 +488,16 @@ function FNmonologPanel(MonologArr) {
   })();
 }
 
-//Функция захода в фуллскрин на телефонах
-document.body.addEventListener("touchstart", (e) => {
-  if (e.touches.length >= 3) {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-    } else {
-      if (document.fullscreenEnabled) {
-        document.exitFullscreen();
-      }
-    }
-  }
-});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//Тестовый рут
+let mainArr = [...rootDemoStart];

@@ -205,8 +205,8 @@ i:hover {
   transform: scale(1.05);
 }
 
-.NewGameBtn {
-}
+/* .NewGameBtn {
+} */
 
 .LoadGameBtn {
   top: calc(20%);
@@ -269,9 +269,6 @@ i:hover {
     font-size: 1.3em;
   }
 
-  .NewGameBtn {
-  }
-
   .LoadGameBtn {
     top: calc(28%);
   }
@@ -330,9 +327,6 @@ i:hover {
     left: calc(60%);
     top: calc(18%);
     font-size: 1.3em;
-  }
-
-  .NewGameBtn {
   }
 
   .LoadGameBtn {
