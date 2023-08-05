@@ -485,3 +485,16 @@ function FNmonologPanel(MonologArr) {
     MonologPanel.click();
   })();
 }
+
+//Функция захода в фуллскрин на телефонах
+document.body.addEventListener("touchstart", (e) => {
+  if (e.touches.length >= 3) {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.fullscreenEnabled) {
+        document.exitFullscreen();
+      }
+    }
+  }
+});
