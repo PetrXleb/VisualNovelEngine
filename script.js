@@ -125,14 +125,14 @@ function FNsound(url) {
 
 //Функция показа фона
 IconVie.addEventListener("click", () => {
-  Footer.classList.add("hidden");
+  Footer.classList.add("hiddenOppacity");
   //Создаем див
   let divVie = document.createElement("div");
   divVie.classList.add("divVie");
   document.body.appendChild(divVie);
   //добавляем слушатель
   divVie.addEventListener("click", () => {
-    Footer.classList.remove("hidden");
+    Footer.classList.remove("hiddenOppacity");
     divVie.parentNode.removeChild(divVie);
   });
 });

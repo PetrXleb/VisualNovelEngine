@@ -3,7 +3,7 @@
 //
 let autor = {
   name: "Автор",
-  color: "black",
+  color: "red",
 };
 
 let nameLena = {

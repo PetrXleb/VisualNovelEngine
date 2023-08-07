@@ -7,6 +7,10 @@
   overflow-y: hidden;
 }
 
+:root {
+  --main-color: rgba(255, 255, 255, 0.67);
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -26,11 +30,15 @@ body {
   display: none;
 }
 
+.hiddenOppacity {
+  opacity: 0;
+}
+
 .description {
   margin: 30px;
   width: 85%;
   height: 70%;
-  background-color: rgba(179, 188, 189, 0.863);
+  background-color: var(--main-color);
   border-radius: 10px;
   padding: 10px;
 }
@@ -68,7 +76,7 @@ body {
   z-index: 100;
   width: 65%;
   height: 65%;
-  background-color: rgba(179, 188, 189, 0.863);
+  background-color: var(--main-color);
   border-width: 3px 3px 3px 3px;
   border-radius: 99% 2% 99% 1%/3% 98% 2% 95%;
   padding: 30px;
@@ -84,10 +92,11 @@ footer {
   margin-top: auto;
   margin: 10px;
   z-index: 30;
-  background-color: rgba(179, 188, 189, 0.863);
+  background-color: var(--main-color);
   border: solid rgba(0, 0, 0, 0);
   border-width: 3px 3px 3px 3px;
   border-radius: 99% 2% 99% 1%/3% 98% 2% 95%;
+  transition: opacity 0.3s ease;
 }
 
 footer .panel {
@@ -128,6 +137,7 @@ i:hover {
   font-family: "Comic Sans MS";
   font-weight: 900;
   font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
 
 .phrase {
@@ -194,10 +204,9 @@ i:hover {
   left: calc(60%);
   top: calc(6%);
   place-items: center;
-  border: none;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 1.3em;
-  background-color: rgba(228, 228, 228, 0.938);
+  background-color: rgba(255, 255, 255, 0);
   transition: transform 0.2s;
 }
 
@@ -270,7 +279,7 @@ i:hover {
   }
 
   .LoadGameBtn {
-    top: calc(31%);
+    top: calc(28%);
   }
 
   .description {
@@ -330,7 +339,7 @@ i:hover {
   }
 
   .LoadGameBtn {
-    top: calc(36%);
+    top: calc(33%);
   }
 
   .description {
