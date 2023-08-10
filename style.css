@@ -34,6 +34,11 @@ body {
   opacity: 0;
 }
 
+.mediaContent {
+  position: absolute;
+  opacity: 0;
+}
+
 .description {
   margin: 30px;
   width: 85%;
