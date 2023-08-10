@@ -8,9 +8,9 @@ let ROOTDemoFinal = [
   Nikolai,
   "FNchangeBackgroundImage",
   NikolaiHome,
+  "Это все механики, которые пока доступны",
   "FNputSprait",
   [Himicy, 50, 30, 0, 900], ///size //top //left
-  "Это все механики, которые пока доступны",
   "Подробности ищи в <u>DemoRoots.js</u>",
   "Там можно ознакомиться с этой тестовой новеллой",
   "Спасибо за внимание!",
