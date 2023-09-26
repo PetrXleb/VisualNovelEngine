@@ -100,6 +100,8 @@ let rootDemoStart = [
   "FNmusic",
   music2,
   "...",
+  "..",
+  ".",
   "Через клик песня перестанет играть",
   "FNmusic",
   stop,
